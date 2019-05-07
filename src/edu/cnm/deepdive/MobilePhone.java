@@ -6,13 +6,15 @@ public class MobilePhone {
 
   public static ArrayList<Contacts> contactsArrayList = new ArrayList<>();
 
-  public static void addContacts() {
-
+  public static void addContacts(Contacts contact) {
+    contactsArrayList.add(contact);
   }
 
   public static void printContacts() {
     for (Contacts contact : contactsArrayList) {
-      System.out.println(contact.toString());
+      System.out.println(contact.getName());
+      System.out.println(contact.getPhoneNumber());
+      System.out.println();
     }
   }
 

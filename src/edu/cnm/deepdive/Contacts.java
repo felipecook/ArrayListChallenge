@@ -2,24 +2,29 @@ package edu.cnm.deepdive;
 
 public class Contacts {
 
-  private static String name;
-  private static String phoneNumber;
+  private String name;
+  private String phoneNumber;
 
+  public Contacts(String name, String phoneNumber) {
+    this.name = name;
+    this.phoneNumber = phoneNumber;
+  }
 
-
-  public static String getName() {
+  public String getName() {
     return name;
   }
 
-  public static void setName(String name) {
-    Contacts.name = name;
+  public void setName(String name) {
+    this.name = name;
   }
 
-  public static String getPhoneNumber() {
+  public String getPhoneNumber() {
     return phoneNumber;
   }
 
-  public static void setPhoneNumber(String phoneNumber) {
-    Contacts.phoneNumber = phoneNumber;
+  public void setPhoneNumber(String phoneNumber) {
+    this.phoneNumber = phoneNumber;
   }
+
+
 }

@@ -16,7 +16,7 @@ public class Main {
 
     boolean quit = true;
 
-    while (!quit) {
+    while (quit) {
 
       printMenu();
       int choice = scanner.nextInt();
@@ -29,7 +29,14 @@ public class Main {
           printContacts();
           break;
         case 2:
-          addContacts();
+          System.out.println("Please enter the Name of the contact: ");
+          String name = scanner.nextLine();
+          scanner.nextLine();
+          System.out.println("Please enter the Number of the contact: ");
+          String number = scanner.nextLine();
+          scanner.nextLine();
+          addContacts(new Contacts(name, number));
+          System.out.println("Contact has been created.");
           break;
         case 3:
           updateContacts();
