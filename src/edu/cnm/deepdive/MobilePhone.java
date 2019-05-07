@@ -6,6 +6,11 @@ public class MobilePhone {
 
   ArrayList<Contacts> contactsArrayList = new ArrayList<>();
 
+  public static void addContacts() {
+
+  }
+
+
 
 
 }
