@@ -1,6 +1,10 @@
 package edu.cnm.deepdive;
 
 import static edu.cnm.deepdive.MobilePhone.addContacts;
+import static edu.cnm.deepdive.MobilePhone.printContacts;
+import static edu.cnm.deepdive.MobilePhone.removeContacts;
+import static edu.cnm.deepdive.MobilePhone.searchContacts;
+import static edu.cnm.deepdive.MobilePhone.updateContacts;
 
 import java.util.Scanner;
 
