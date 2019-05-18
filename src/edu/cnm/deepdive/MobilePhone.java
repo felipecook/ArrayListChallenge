@@ -11,6 +11,7 @@ public class MobilePhone {
   }
 
   public static void printContacts() {
+    System.out.println("You have " + contactsArrayList.size() + " contacts in your phone book");
     for (Contacts contact : contactsArrayList) {
       System.out.println(contact.getName());
       System.out.println(contact.getPhoneNumber());
@@ -18,12 +19,13 @@ public class MobilePhone {
     }
   }
 
-  public static void updateContacts() {
-
+  public static void updateContacts(int position, Contacts contact) {
+    contactsArrayList.set(position, contact);
+    System.out.println("Contact at " + (position + 1) + " has been updated.");
   }
 
-  public static void removeContacts() {
-
+  public static void removeContacts(int position) {
+    contactsArrayList.remove(position);
   }
 
   public static void searchContacts() {

@@ -39,7 +39,11 @@ public class Main {
           System.out.println("Contact has been created.");
           break;
         case 3:
-          updateContacts();
+          System.out.println("Please enter the position of the contact you wish to update");
+          int position = scanner.nextInt();
+          System.out.println("Please enter the contact you wish to update with.");
+          String contact = scanner.nextLine();
+          updateContacts(position, contact);
           break;
         case 4:
           removeContacts();
