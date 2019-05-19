@@ -43,12 +43,20 @@ public class MobilePhone {
     return null;
   }
 
+  public Contact queryContact(String name) {
+    int position = findContact(name);
+    if (position >= 0) {
+      return this.myContacts.get(position);
+    }
+    return null;
+  }
+
   public void printContacts() {
-    System.out.println("You have " + myContacts.size() + " contacts in your phone book");
-    for (Contact contact : myContacts) {
-      System.out.println(contact.getName());
-      System.out.println(contact.getPhoneNumber());
-      System.out.println();
+    System.out.println("You have " + this.myContacts.size() + " contacts in your phone book");
+    for (int i = 0; i < this.myContacts.size(); i++) {
+      System.out.println((i + 1) + "." +
+          this.myContacts.get(i).getName() + " --> " +
+          this.myContacts.get(i).getPhoneNumber());
     }
   }
 
