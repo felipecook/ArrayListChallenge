@@ -9,9 +9,12 @@ import java.util.Scanner;
 
 public class Main {
 
-  public static Scanner scanner = new Scanner(System.in);
+  private static Scanner scanner = new Scanner(System.in);
+  private static MobilePhone mobilePhone = new MobilePhone("5052704597");
 
   public static void main(String[] args) {
+
+    Contact myContacts = new Contact()
 
     boolean quit = true;
 
