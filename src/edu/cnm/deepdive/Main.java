@@ -33,15 +33,9 @@ public class Main {
           break;
         case 4:
           removeContact();
-          int position = scanner.nextInt();
-          scanner.nextLine();
-          mobilePhone.removeContacts(Contact.createContact());
           break;
         case 5:
           queryContact();
-          System.out.println("Please enter the name and number you are trying to query");
-
-          mobilePhone.queryContact(Contact.createContact());
           break;
         case 6:
           System.out.println("\nShutting down...");
@@ -60,6 +54,7 @@ public class Main {
     Contact newContact = Contact.createContact(name, number);
     if (mobilePhone.addContacts(newContact)) {
       System.out.println("New contact added: name = " + name + ", phone = " + number);
+      return;
     }
     System.out.println("Contact is already in your list of contacts");
   }
@@ -78,6 +73,29 @@ public class Main {
       System.out.println(existingContact.getName() + " has been updated with: " + newContact.getName() + ".");
     } else {
       System.out.println("Contact is not found in list.");
+    }
+  }
+
+  private static void removeContact() {
+    System.out.println("Enter the contact's name that you wish to remove: ");
+    String contactName = scanner.nextLine();
+    Contact oldContact = mobilePhone.queryContact(contactName);
+    if (oldContact != null) {
+      System.out.println("Removing contact " + oldContact.getName());
+      mobilePhone.removeContacts(oldContact);
+    } else {
+      System.out.println("Contact was not found in list.");
+    }
+  }
+
+  private static void queryContact() {
+    System.out.println("Please enter the name you are trying to query: ");
+    String contactName = scanner.nextLine();
+    Contact contact = mobilePhone.queryContact(contactName);
+    if (contact != null) {
+      System.out.println("Contact is in list.");
+    } else {
+      System.out.println("Contact was not found.");
     }
   }
 
