@@ -1,11 +1,11 @@
 package edu.cnm.deepdive;
 
-public class Contacts {
+public class Contact {
 
   private String name;
   private String phoneNumber;
 
-  public Contacts(String name, String phoneNumber) {
+  public Contact(String name, String phoneNumber) {
     this.name = name;
     this.phoneNumber = phoneNumber;
   }
@@ -14,17 +14,12 @@ public class Contacts {
     return name;
   }
 
-  public void setName(String name) {
-    this.name = name;
-  }
-
   public String getPhoneNumber() {
     return phoneNumber;
   }
 
-  public void setPhoneNumber(String phoneNumber) {
-    this.phoneNumber = phoneNumber;
+  public static Contact createContact(String name, String phoneNumber) {
+    return new Contact(name, phoneNumber);
   }
-
 
 }

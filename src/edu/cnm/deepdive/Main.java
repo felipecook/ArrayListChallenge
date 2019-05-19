@@ -4,7 +4,6 @@ import static edu.cnm.deepdive.MobilePhone.addContacts;
 import static edu.cnm.deepdive.MobilePhone.printContacts;
 import static edu.cnm.deepdive.MobilePhone.removeContacts;
 import static edu.cnm.deepdive.MobilePhone.searchContacts;
-import static edu.cnm.deepdive.MobilePhone.updateContacts;
 
 import java.util.Scanner;
 
@@ -35,20 +34,24 @@ public class Main {
           System.out.println("Please enter the Number of the contact: ");
           String number = scanner.nextLine();
           scanner.nextLine();
-          addContacts(new Contacts(name, number));
+          addContacts(new Contact(name, number));
           System.out.println("Contact has been created.");
           break;
         case 3:
-          System.out.println("Please enter the position of the contact you wish to update");
-          int position = scanner.nextInt();
-          System.out.println("Please enter the contact you wish to update with.");
-          String contact = scanner.nextLine();
-          updateContacts(position, contact);
+//          System.out.println("Please enter the position of the contact you wish to update");
+//          int position = scanner.nextInt();
+//          System.out.println("Please enter the contact you wish to update with.");
+//          String contact = scanner.nextLine();
+//          updateContacts(position, contact);
           break;
         case 4:
-          removeContacts();
+          System.out.println("Please enter the position of the contact you wish to remove.");
+          int position = scanner.nextInt();
+          scanner.nextLine();
+          removeContacts(position);
           break;
         case 5:
+
           searchContacts();
           break;
         case 6:
