@@ -1,9 +1,5 @@
 package edu.cnm.deepdive;
 
-import static edu.cnm.deepdive.MobilePhone.addContacts;
-import static edu.cnm.deepdive.MobilePhone.printContacts;
-import static edu.cnm.deepdive.MobilePhone.removeContacts;
-import static edu.cnm.deepdive.MobilePhone.searchContacts;
 
 import java.util.Scanner;
 
@@ -14,21 +10,20 @@ public class Main {
 
   public static void main(String[] args) {
 
-    Contact myContacts = new Contact()
+    boolean quit = false;
+    startPhone();
+    printMenu();
 
-    boolean quit = true;
-
-    while (quit) {
-
-      printMenu();
+    while (!quit) {
+      System.out.println("\nEnter action: (Press 0 to redisplay available choices)");
       int choice = scanner.nextInt();
       scanner.nextLine();
-      switch(choice) {
+      switch (choice) {
         case 0:
           printMenu();
           break;
         case 1:
-          printContacts();
+          mobilePhone.printContacts();
           break;
         case 2:
           System.out.println("Please enter the Name of the contact: ");
@@ -37,7 +32,7 @@ public class Main {
           System.out.println("Please enter the Number of the contact: ");
           String number = scanner.nextLine();
           scanner.nextLine();
-          addContacts(new Contact(name, number));
+          mobilePhone.addContacts(new Contact(name, number));
           System.out.println("Contact has been created.");
           break;
         case 3:
@@ -48,24 +43,25 @@ public class Main {
 //          updateContacts(position, contact);
           break;
         case 4:
-          System.out.println("Please enter the position of the contact you wish to remove.");
           int position = scanner.nextInt();
           scanner.nextLine();
-          removeContacts(position);
+          mobilePhone.removeContacts(Contact.createContact());
           break;
         case 5:
+          System.out.println("Please enter the name and number you are trying to query");
 
-          searchContacts();
+          mobilePhone.queryContact(Contact.createContact());
           break;
         case 6:
-          quit = false;
+          System.out.println("\nShutting down...");
+          quit = true;
           break;
       }
     }
 
   }
 
-  static void printMenu() {
+  private static void printMenu() {
     System.out.println("Please select your choice: ");
     System.out.println("Press 0 to re-display the choices.");
     System.out.println("Press 1 to print list of contacts.");
@@ -74,8 +70,10 @@ public class Main {
     System.out.println("Press 4 to remove a contact.");
     System.out.println("Press 5 to search/find a contact.");
     System.out.println("Press 6 to quit.");
+  }
 
-
+  private static void startPhone() {
+    System.out.println("Phone is starting...");
   }
 
 
